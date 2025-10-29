@@ -4,19 +4,40 @@
 Programa para sumar 2 numeros en JavaScript
 */
 
-import {encabezado, line} from "./utilidades.js";
+import { encabezado, line, readLineNumber } from "./utilidades.js";
 
 const main = () => {
-  encabezado('sumar numeros', 32)
-  let a = 5
-  let b = 2
-  let resultado = 0
-  console.log('resultado = ' + Sumar(a, b, resultado))
-  line(32)
+
+
+  while (true) {
+    encabezado('sumar numeros', 32)
+
+    let a = readLineNumber('a')
+    let b = readLineNumber('b')
+    let c = readLineNumber('c')
+    let d = readLineNumber('d')
+
+    let resultado = Sumar(a, b, c, d)
+
+    try {
+      if (isNaN(resultado)) {
+      console.error('Error repite la operacion nuevamente')
+    } else if (resultado == 0){
+      console.error('Error no puedes dejar los campos vacios')
+    }else {
+      console.log('resultado =', resultado)
+      line(32)
+      break
+    }
+    } catch (error) {
+      console.error(error)
+    }
+    
+  }
 }
 
-function Sumar(a = 0, b = 0, result) {
-  return result = a + b
+const Sumar =(...numeros) => {
+  return numeros.reduce((result, num) => result + num, 0)
 }
 
 main()
