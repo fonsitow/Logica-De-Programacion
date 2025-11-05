@@ -7,6 +7,18 @@ const readLineNumber = (msj = '',) => {
   numero = Number(input(msj + ': '));
   return numero;
 };
+const readLine = (msj = '',) => {
+  let string = '';
+  while (true) {
+    string = (input(msj + ': '));
+    if (string.trim() != '') {
+      return string
+    } else {
+      console.error('no puedes dejar  el campo vacio')
+      
+    }
+  }
+};
 
 const centrar = (texto = '', largo = 0) => {
   let relleno = (largo - texto.length) / 2
@@ -24,8 +36,12 @@ const encabezado = (titulo = '', linea = 0) => {
   line(linea)
 };
 
+const capitalizar = (texto = '') => {
+  return texto.charAt(0).toUpperCase() + texto.slice(1).toLowerCase();
+}
 
-export { encabezado, line, readLineNumber }
+
+export { encabezado, line, readLineNumber, capitalizar, readLine}
 
 
 
