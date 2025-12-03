@@ -39,10 +39,10 @@ double leerDouble(String msj){
 String leerString(String msj){
   stdout.write(msj);
   final entrada = stdin.readLineSync();
-  if (entrada != null) {
+  if (entrada!.trimRight().trimLeft().isNotEmpty) {
     return entrada;
   } else {
-    throw ('Error, agrega un texto valido');
+    throw ('Error, agrega un dato valido');
   }
 }
 
