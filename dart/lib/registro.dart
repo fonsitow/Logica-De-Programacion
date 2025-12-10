@@ -1,5 +1,4 @@
 //REGISTRO DE ALUMNOS
-import 'package:intl/intl.dart' as intl;
 import '../util.dart' as util;
 
 //Variables
